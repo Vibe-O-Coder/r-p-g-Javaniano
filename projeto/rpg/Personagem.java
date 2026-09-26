@@ -1,4 +1,4 @@
-package rpg;
+package rpgJavaniano.projeto.rpg;
 
 public class Personagem {
     protected String nome;
@@ -9,10 +9,10 @@ public class Personagem {
     protected int agi;
     protected int log;
     
-    public Personagem(String nome, int maxHp, int hp, int atk, int def, int agi, int log) {
+    public Personagem(String nome, int maxHp, int atk, int def, int agi, int log) {
         this.nome = nome;
         this.maxHp = maxHp;
-        this.hp = hp;
+        this.hp = maxHp;
         this.atk = atk;
         this.def = def;
         this.agi = agi;
@@ -23,12 +23,12 @@ public class Personagem {
         String string = String.format("""
                        Statistics
                 ------------------------
-                |%-10s %3d/%-3d|
+                |%-14s %3d/%-3d|
                 ------------------------
-                |ATK: %-15d|
-                |DEF: %-15d|
-                |AGI: %-15d|
-                |LOG: %-15d|
+                |ATK: %-17d|
+                |DEF: %-17d|
+                |AGI: %-17d|
+                |LOG: %-17d|
                 ------------------------
                 """, nome, hp, maxHp, atk, def, agi, log);
         return string;

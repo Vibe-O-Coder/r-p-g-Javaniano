@@ -1,7 +1,7 @@
-package rpg;
+package rpgJavaniano.projeto.rpg;
 
 public class Inimigo extends Personagem {
-    Inimigo(String nome, int maxHp, int hp, int atk, int def, int agi, int mag) {
-        super(nome, maxHp, hp, atk, def, agi, mag);
+    Inimigo(String nome, int maxHp, int atk, int def, int agi, int log) {
+        super(nome, maxHp, atk, def, agi, log);
     }
 }
