@@ -41,7 +41,7 @@ public class Personagem {
         return armorDR;
     }
 
-    public void atacar(Inimigo alvo) {
+    public void atacar(Personagem alvo) {
         /* 
             método de suporte feito para calcular o dano causado ao inimigo
             funciona somente em sub-classes da classe Personagem, utiliza
@@ -60,8 +60,12 @@ public class Personagem {
         // cálculo final do dano físico
         double danoBruto = this.atk * (1.0 - armorDR) * multCritico;
         double danoFinal = danoBruto * variancia;
-        
+
         alvo.receberDano(danoFinal);
+    }
+
+    public int getHp() {
+        return this.hp;
     }
 
     public void receberDano(double danoFinal) {
@@ -77,6 +81,10 @@ public class Personagem {
         }
     }
 
+    public String getFormatHp() {
+        return this.hp + "/" + this.maxHp;
+    }
+
     public String toString() {
         /*
             Retorna os atributos do objeto em uma string formatada
@@ -88,7 +96,7 @@ public class Personagem {
                 ------------------------
                 |ATK: %-17d|
                 |DEF: %-17d|
-                |AGI: %-17d|
+                |DEX: %-17d|
                 |LOG: %-17d|
                 ------------------------
                 """, nome, hp, maxHp, atk, def, dex, log);
