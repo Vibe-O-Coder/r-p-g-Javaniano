@@ -63,22 +63,27 @@ public class Personagem {
 
         alvo.receberDano(danoFinal);
     }
-
+    
     public int getHp() {
         return this.hp;
     }
-
+    
+    public int getDex() {
+        return this.dex;
+    }
+    
     public void receberDano(double danoFinal) {
         /*   
-            recebe o danoFinal (do método de suporte) do inimigo e faz
+        recebe o danoFinal (do método de suporte) do inimigo e faz
             uma verificação para evitar hp negativo
-        */
+            */
         double dano = Math.max(1.0, (int) Math.round(danoFinal));
         if (dano > hp) {
             hp = 0;
         } else {
             hp -= dano;
         }
+        System.out.println(dano + " causado em " + this.nome + "! " + this.getFormatHp());
     }
 
     public String getFormatHp() {
